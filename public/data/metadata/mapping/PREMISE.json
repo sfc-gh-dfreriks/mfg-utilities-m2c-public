@@ -1,0 +1,1 @@
+{"ready":false,"message":"Metadata layer not built yet: run the dbt metadata models (CONFIG.FIELD_MAPPING).","objects":["PREMISE","CONTRACT","DEVICE","METER_READ","BILLING_DOCUMENT","FICA_ITEM","AMI_INTERVAL"]}

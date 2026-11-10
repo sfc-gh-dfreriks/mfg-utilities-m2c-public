@@ -1,0 +1,78 @@
+{
+  "askCortexPage": {
+    "topic": "general",
+    "suggestions": [
+      "From the meter to the bank: what did we bill, what did we collect, and where is revenue leaking?",
+      "How many bills are outsorted, and how much of that is driven by estimated reads?",
+      "Why do estimated reads spike in winter, and what does it cost us?",
+      "Where are the tampered smart meters, and how much energy are we losing?",
+      "Which Southern territory customers are most likely to churn or default?",
+      "What would we lose by reading SAP from BDC instead of IS-U tables?"
+    ]
+  },
+  "pages": {
+    "overview": {
+      "topic": "overview",
+      "suggestions": [
+        "Where is revenue at risk between the meter and the bank, and which leak is biggest?",
+        "How do the Northern and Southern territories compare on billing and outsorting?",
+        "How have billed revenue and the outsorted rate trended by month?"
+      ]
+    },
+    "revenue-assurance": {
+      "topic": "revenue-assurance",
+      "suggestions": [
+        "Which rate categories have the highest outsorted and estimated-read rates?",
+        "In which months does the estimated-read share rise, and by how much?",
+        "How much billed revenue is held as outsorted, by territory?"
+      ]
+    },
+    "billing-exceptions": {
+      "topic": "billing-exceptions",
+      "suggestions": [
+        "Why are bills being outsorted, and how much revenue is held?",
+        "How much more likely is an estimated-read bill to outsort than an actual-read bill?",
+        "Which months have the most estimated reads?",
+        "How old is the outsorted backlog?"
+      ]
+    },
+    "collections": {
+      "topic": "collections",
+      "suggestions": [
+        "How much is in arrears over 90 days, and where?",
+        "Which territory and segment carry the most open receivables at dunning level 3 or higher?",
+        "What is our payment rate, and is it improving?"
+      ]
+    },
+    "theft-tamper": {
+      "topic": "theft-tamper",
+      "suggestions": [
+        "Where are the tamper-flagged smart meters concentrated?",
+        "How much energy have tampered meters cost us?",
+        "Which meters should field services investigate first?"
+      ]
+    },
+    "churn-risk": {
+      "topic": "churn-risk",
+      "suggestions": [
+        "What share of Southern contracts are at high churn risk, compared with Northern?",
+        "Which high-risk contracts carry the most arrears?",
+        "What drives the churn risk score for the top contracts?"
+      ]
+    },
+    "source-coverage": {
+      "topic": "sources",
+      "suggestions": [
+        "What does each source supply, and what are the gaps?",
+        "What changes if SAP is read from BDC instead of IS-U tables?"
+      ]
+    },
+    "data-sources": {
+      "topic": "sources",
+      "suggestions": [
+        "What does each source supply, and what are the gaps?",
+        "What changes if SAP is read from BDC?"
+      ]
+    }
+  }
+}
