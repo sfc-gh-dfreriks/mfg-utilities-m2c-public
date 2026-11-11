@@ -12,7 +12,7 @@ export default function AskCortexPage() {
           <Sparkles className="h-4 w-4" /> Cortex meter-to-cash analysis
         </div>
         <p className="mt-1 text-sm text-gray-600">
-          Ask a question across meter reads, billing and outsorting, estimated reads, FI-CA receivables and arrears, smart meter tamper and churn risk. Cortex answers from live facts in the gold marts.</p>
+          Ask a question across the 7 meter-to-cash stages: meter reading, VEE, rate calculation, bill generation and delivery, payment collection, exceptions and collections, plus the 10 M2C KPIs against benchmarks. Cortex answers from live facts in the gold marts.</p>
       </div>
       <AskCortex topic="general" label="Analyse meter-to-cash performance" suggestions={SUGGESTIONS} />
     </div>

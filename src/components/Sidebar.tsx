@@ -1,20 +1,24 @@
-import { LayoutDashboard, Scale, FileWarning, Wallet, ShieldAlert, UserMinus, Layers, Database, GitBranch, Check, Sparkles, Boxes, Columns3, BookOpen } from 'lucide-react';
+import { LayoutDashboard, Gauge, ShieldCheck, Calculator, Receipt, Send, Wallet, AlertTriangle, Timer, Layers, Database, GitBranch, Check, Sparkles, Boxes, Columns3, BookOpen } from 'lucide-react';
 import { useFilters } from '@/hooks/useFilters';
 import { cn } from '@/lib/utils';
 
-export type PageId = 'ask-cortex' | 'overview' | 'revenue-assurance' | 'billing-exceptions' | 'collections' | 'theft-tamper' | 'churn-risk' | 'source-coverage'
+export type PageId = 'ask-cortex' | 'overview' | 'meter-reading' | 'validation' | 'rate-calculation' | 'bill-generation' | 'bill-delivery'
+  | 'payment-collection' | 'exceptions-collections' | 'cycle-times' | 'source-coverage'
   | 'data-sources' | 'field-mapping' | 'sap-metadata' | 'lineage' | 'pipeline-3d';
 
 export interface NavItem { id: PageId; label: string; icon: React.ElementType; }
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'ask-cortex', label: 'Ask Cortex', icon: Sparkles },
-  { id: 'overview', label: 'Executive Dashboard', icon: LayoutDashboard },
-  { id: 'revenue-assurance', label: 'Revenue Assurance', icon: Scale },
-  { id: 'billing-exceptions', label: 'Billing Exceptions & Estimated Reads', icon: FileWarning },
-  { id: 'collections', label: 'Collections & Arrears', icon: Wallet },
-  { id: 'theft-tamper', label: 'Theft & Tamper', icon: ShieldAlert },
-  { id: 'churn-risk', label: 'Churn Risk', icon: UserMinus },
+  { id: 'overview', label: 'Meter-to-Cash Cockpit', icon: LayoutDashboard },
+  { id: 'meter-reading', label: '1 · Meter Reading', icon: Gauge },
+  { id: 'validation', label: '2 · Validation (VEE)', icon: ShieldCheck },
+  { id: 'rate-calculation', label: '3 · Rate Calculation', icon: Calculator },
+  { id: 'bill-generation', label: '4 · Bill Generation', icon: Receipt },
+  { id: 'bill-delivery', label: '5 · Bill Delivery', icon: Send },
+  { id: 'payment-collection', label: '6 · Payment Collection', icon: Wallet },
+  { id: 'exceptions-collections', label: '7 · Exceptions & Collections', icon: AlertTriangle },
+  { id: 'cycle-times', label: 'Cycle Times', icon: Timer },
   { id: 'source-coverage', label: 'Source Coverage', icon: Layers },
   { id: 'data-sources', label: 'Data Sources', icon: Database },
   { id: 'field-mapping', label: 'Field Mapping', icon: Columns3 },
@@ -83,9 +87,9 @@ export default function Sidebar({ activePage, onNavigate }: SidebarProps) {
         </ul>
       </nav>
       <FilterGroup label="Territory" items={companies} selected={selectedCompanies} setSelected={setSelectedCompanies} />
-      <FilterGroup label="Customer division" items={categories} selected={selectedCategories} setSelected={setSelectedCategories} />
+      <FilterGroup label="Customer segment" items={categories} selected={selectedCategories} setSelected={setSelectedCategories} />
       <div className="border-t border-white/10 px-5 py-3">
-        <p className="text-[10px] leading-relaxed text-sf-pale/50">SAP ECC · S/4HANA (IS-U) · BW · BDC · AMI head-end · Weather<br />dbt medallion · Cortex Agent · USD · kWh</p>
+        <p className="text-[10px] leading-relaxed text-sf-pale/50">SAP ECC · S/4HANA (IS-U / FI-CA) · BW · BDC · AMI · Weather · Engagement · Payments gateway<br />dbt medallion · Cortex Agent · USD · kWh</p>
       </div>
     </aside>
   );

@@ -1,1 +1,0 @@
-{"kpis":{"devices":0,"flags":null,"loss_kwh":null,"avg_days":null,"avg_voltage":null,"southern":null,"ami_devices":1519,"rate_kwh":0.08605318345},"byTerritory":[],"byRegion":[],"rateByTerritory":[{"name":"Northern","ami_devices":872,"tampered":0,"pct":0},{"name":"Southern","ami_devices":647,"tampered":6,"pct":0.927357}],"devices":[]}

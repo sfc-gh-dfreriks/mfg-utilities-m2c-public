@@ -18,15 +18,20 @@ export interface FlowLink { source: string; target: string; value: number; activ
 export interface FlowModel { nodes: FlowNode[]; links: FlowLink[]; lineage: { nodes: any[]; edges: any[] } }
 
 const OBJECT_LABEL: Record<string, string> = {
-  PREMISE: 'Premise', CONTRACT: 'Contract', DEVICE: 'Meter', METER_READ: 'Meter read',
-  BILLING_DOCUMENT: 'Billing document', FICA_ITEM: 'FI-CA item', AMI_INTERVAL: 'AMI interval',
+  PREMISE: 'Premise', CONTRACT: 'Contract', DEVICE: 'Meter', METER_READ_ORDER: 'Meter read order',
+  METER_READ: 'Meter read', VEE_RESULT: 'VEE result', BILLING_DOCUMENT: 'Billing document', BILL_LINE: 'Bill line',
+  INVOICE: 'Invoice', INVOICE_DELIVERY: 'Bill delivery', FICA_ITEM: 'FI-CA item', PAYMENT: 'Payment',
+  REMITTANCE: 'Remittance', PAYMENT_ARRANGEMENT: 'Installment plan', WRITE_OFF: 'Write-off', BPEM_CASE: 'BPEM case',
+  CUSTOMER_NOTICE: 'Customer notice', AMI_INTERVAL: 'AMI interval', DEGREE_DAY: 'Degree day',
 };
 // Gold in the 3D views = only the analytical marts the app's pages deliver. The dbt graph also tags
 // per-source enrichment views (enr_*), metadata tables and source coverage as gold; those stay on the
 // Lineage page but are left out here.
 const MART_LABEL: Record<string, string> = {
-  fct_billing: 'Billing', fct_fica: 'FI-CA items', mart_revenue_assurance: 'Revenue assurance', mart_billing_exceptions: 'Billing exceptions',
-  mart_collections: 'Collections', mart_theft_tamper: 'Theft & tamper', mart_churn_risk: 'Churn risk',
+  fct_meter_read: 'Meter reads & VEE', fct_bill: 'Bills & delivery', fct_payment: 'Payments', fct_ar: 'FI-CA receivables',
+  fct_bpem_case: 'BPEM cases', mart_m2c_kpis: 'M2C KPIs', mart_m2c_funnel: '7-stage funnel', mart_cycle_times: 'Cycle times',
+  mart_vee: 'Read success & VEE', mart_billing_accuracy: 'Billing accuracy', mart_cash_application: 'Cash application', mart_collections: 'Collections',
+  mart_revenue_assurance: 'Revenue assurance', mart_billing_exceptions: 'Billing exceptions', mart_churn_risk: 'Churn risk', mart_theft_tamper: 'Theft & tamper',
 };
 const isAppMart = (n: any) => n.layer === 'gold' && n.name in MART_LABEL;
 

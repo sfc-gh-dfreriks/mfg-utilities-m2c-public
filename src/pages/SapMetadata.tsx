@@ -28,7 +28,7 @@ export default function SapMetadata() {
   const tables: any[] = data?.tables ?? [];
   const totals: any[] = data?.totals ?? [];
   const [system, setSystem] = useState('DDIC');
-  const [table, setTable] = useState('EKKO');
+  const [table, setTable] = useState('ERCH');
   const [tab, setTab] = useState<Tab>('browser');
   const sysTables = useMemo(() => tables.filter((t) => t.systemType === system).sort((a, b) => a.tabname.localeCompare(b.tabname)), [tables, system]);
   useEffect(() => { if (sysTables.length && !sysTables.some((t) => t.tabname === table)) setTable(sysTables[0].tabname); }, [sysTables, table]);
@@ -172,7 +172,7 @@ function EnrichedPreview({ system, table }: { system: string; table: string }) {
 }
 
 function Assistant({ system, table }: { system: string; table: string }) {
-  const [object, setObject] = useState('VALUATION');
+  const [object, setObject] = useState('BILLING_DOCUMENT');
   const { data, loading, error } = useQuery(() => fetchMetaSuggest(system, table, object), [system, table, object]);
   const sugg: any[] = data?.suggestions ?? [];
   return (

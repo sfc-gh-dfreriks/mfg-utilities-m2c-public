@@ -46,7 +46,10 @@ function loadStatic(file: string): Promise<any> {
 async function loadKeyed(dir: string, companies: string[], categories: string[]): Promise<any> {
   const cat = categories.length === 1 ? categories[0] : '';
   const tries = [filterKey(companies, categories), filterKey(companies, []), filterKey([], cat ? [cat] : []), filterKey([], [])];
+  // views.json lists the baked view hashes (same for every keyed page), so non-baked views are skipped without a 404 probe.
+  const baked: string[] | null = await loadStatic('views').catch(() => null);
   for (const k of tries) {
+    if (baked && !baked.includes(hash(k))) continue;
     try { return await loadStatic(`${dir}/${hash(k)}`); } catch { /* next */ }
   }
   throw new Error('Snapshot not available');

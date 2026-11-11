@@ -2,69 +2,93 @@
   "askCortexPage": {
     "topic": "general",
     "suggestions": [
-      "From the meter to the bank: what did we bill, what did we collect, and where is revenue leaking?",
-      "How many bills are outsorted, and how much of that is driven by estimated reads?",
-      "Why do estimated reads spike in winter, and what does it cost us?",
-      "Where are the tampered smart meters, and how much energy are we losing?",
-      "Which Southern territory customers are most likely to churn or default?",
-      "What would we lose by reading SAP from BDC instead of IS-U tables?"
+      "Where in the 7 meter-to-cash stages do we lose the most time and money?",
+      "How does the Northern territory's read-to-bill window compare with the Southern legacy operation, and why?",
+      "Which payment channels drive DSO up, and how much would AutoPay and wallets help?",
+      "Are we within benchmark on VEE first pass, billing accuracy, exception rate and write-offs?",
+      "What would we lose by reading SAP from BDC instead of IS-U / FI-CA tables?"
     ]
   },
   "pages": {
     "overview": {
       "topic": "overview",
       "suggestions": [
-        "Where is revenue at risk between the meter and the bank, and which leak is biggest?",
-        "How do the Northern and Southern territories compare on billing and outsorting?",
-        "How have billed revenue and the outsorted rate trended by month?"
+        "Which of the 10 M2C KPIs are off benchmark, and which stage should we fix first?",
+        "How do Northern and Southern compare across the cycle, and what explains the gap?",
+        "Where is the friction in the meter-to-cash cycle?"
       ]
     },
-    "revenue-assurance": {
-      "topic": "revenue-assurance",
+    "meter-reading": {
+      "topic": "meter-reading",
       "suggestions": [
-        "Which rate categories have the highest outsorted and estimated-read rates?",
-        "In which months does the estimated-read share rise, and by how much?",
-        "How much billed revenue is held as outsorted, by territory?"
+        "Which MRUs have the worst read success, and why?",
+        "How do AMI, manual, self and estimated reads compare on success and delay?",
+        "How much do estimated reads rise in winter?"
       ]
     },
-    "billing-exceptions": {
-      "topic": "billing-exceptions",
+    "validation": {
+      "topic": "validation",
       "suggestions": [
-        "Why are bills being outsorted, and how much revenue is held?",
-        "How much more likely is an estimated-read bill to outsort than an actual-read bill?",
-        "Which months have the most estimated reads?",
-        "How old is the outsorted backlog?"
+        "Is VEE first pass within the 90-94% benchmark, by territory?",
+        "Which VEE rules fail most often, and how are exceptions resolved?",
+        "How strong is the winter effect on first pass?"
       ]
     },
-    "collections": {
-      "topic": "collections",
+    "rate-calculation": {
+      "topic": "rate-calculation",
       "suggestions": [
-        "How much is in arrears over 90 days, and where?",
-        "Which territory and segment carry the most open receivables at dunning level 3 or higher?",
-        "What is our payment rate, and is it improving?"
+        "How is billed revenue split across flat, tiered and TOU tariffs?",
+        "How much TOU energy falls in on-peak vs off-peak, and at what charge?",
+        "What share of the bill is fixed charge vs energy vs tax?"
       ]
     },
-    "theft-tamper": {
-      "topic": "theft-tamper",
+    "bill-generation": {
+      "topic": "bill-generation",
       "suggestions": [
-        "Where are the tamper-flagged smart meters concentrated?",
-        "How much energy have tampered meters cost us?",
-        "Which meters should field services investigate first?"
+        "Is billing accuracy above 95%, and which tariffs drive reversals?",
+        "How much outsorting is caused by estimated reads?",
+        "Which billing exceptions still have open BPEM cases?"
       ]
     },
-    "churn-risk": {
-      "topic": "churn-risk",
+    "bill-delivery": {
+      "topic": "bill-delivery",
       "suggestions": [
-        "What share of Southern contracts are at high churn risk, compared with Northern?",
-        "Which high-risk contracts carry the most arrears?",
-        "What drives the churn risk score for the top contracts?"
+        "How does read-to-delivery compare with the 3-7 day and 14-21 day bands by channel?",
+        "What is the delivery channel mix in each territory?",
+        "How many digital bills bounce or go unopened?"
+      ]
+    },
+    "payment-collection": {
+      "topic": "payment-collection",
+      "suggestions": [
+        "How does DSO differ between AutoPay, wallet and lockbox payers?",
+        "Which channels and gateways have the lowest auto cash application?",
+        "How much in gateway remittances is not yet posted to FI-CA?"
+      ]
+    },
+    "exceptions-collections": {
+      "topic": "exceptions-collections",
+      "suggestions": [
+        "Are write-offs below 1%, and how does arrangement breakage compare by territory?",
+        "Do SMS reminders reduce disconnect notices?",
+        "Where are the tampered meters and the highest churn-risk contracts?",
+        "Which BPEM case categories are ageing past 90 days?"
+      ]
+    },
+    "cycle-times": {
+      "topic": "cycle-times",
+      "suggestions": [
+        "Where do the days go between read and delivered bill in each territory?",
+        "Which delivery channel is fastest from read to delivery?",
+        "How does invoice-to-payment vary by payment channel?"
       ]
     },
     "source-coverage": {
-      "topic": "sources",
+      "topic": "source-coverage",
       "suggestions": [
-        "What does each source supply, and what are the gaps?",
-        "What changes if SAP is read from BDC instead of IS-U tables?"
+        "Which sources feed each canonical object?",
+        "What would we lose with SAP BDC or BW instead of IS-U tables?",
+        "What do the customer engagement platform and the payments gateway add?"
       ]
     },
     "data-sources": {

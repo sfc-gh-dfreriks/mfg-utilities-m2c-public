@@ -8,8 +8,11 @@ import PageState from '@/components/PageState';
 import Bars from '@/components/Bars';
 
 export const OBJECT_LABEL: Record<string, string> = {
-  PREMISE: 'Premises & installations', CONTRACT: 'Contracts', DEVICE: 'Meters (devices)', METER_READ: 'Meter reads',
-  BILLING_DOCUMENT: 'Billing documents', FICA_ITEM: 'FI-CA open items', AMI_INTERVAL: 'AMI interval reads',
+  PREMISE: 'Premises & installations', CONTRACT: 'Contracts', DEVICE: 'Meters (devices)', METER_READ_ORDER: 'Meter read orders',
+  METER_READ: 'Meter reads', VEE_RESULT: 'VEE results', BILLING_DOCUMENT: 'Billing documents', BILL_LINE: 'Bill lines',
+  INVOICE: 'Invoices (print documents)', INVOICE_DELIVERY: 'Bill deliveries', FICA_ITEM: 'FI-CA items', PAYMENT: 'Payments',
+  REMITTANCE: 'Gateway remittances', PAYMENT_ARRANGEMENT: 'Installment plans', WRITE_OFF: 'Write-offs', BPEM_CASE: 'BPEM cases',
+  CUSTOMER_NOTICE: 'Customer notices', AMI_INTERVAL: 'AMI interval reads', DEGREE_DAY: 'Degree days',
 };
 const OBJECTS = Object.keys(OBJECT_LABEL);
 export const SOURCE_BADGE: Record<string, string> = {

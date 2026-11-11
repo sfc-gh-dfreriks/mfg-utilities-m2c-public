@@ -4,11 +4,14 @@ import Sidebar, { NAV_ITEMS, type PageId } from '@/components/Sidebar';
 import AskCortex from '@/components/AskCortex';
 import AskCortexPage from '@/pages/AskCortexPage';
 import Overview from '@/pages/Overview';
-import RevenueAssurance from '@/pages/RevenueAssurance';
-import BillingExceptions from '@/pages/BillingExceptions';
-import Collections from '@/pages/Collections';
-import TheftTamper from '@/pages/TheftTamper';
-import ChurnRisk from '@/pages/ChurnRisk';
+import MeterReading from '@/pages/MeterReading';
+import Validation from '@/pages/Validation';
+import RateCalculation from '@/pages/RateCalculation';
+import BillGeneration from '@/pages/BillGeneration';
+import BillDelivery from '@/pages/BillDelivery';
+import PaymentCollection from '@/pages/PaymentCollection';
+import ExceptionsCollections from '@/pages/ExceptionsCollections';
+import CycleTimes from '@/pages/CycleTimes';
 import SourceCoverage from '@/pages/SourceCoverage';
 import DataSources from '@/pages/DataSources';
 import FieldMapping from '@/pages/FieldMapping';
@@ -24,11 +27,14 @@ const ASK: Record<string, { topic: string; suggestions: string[] }> = ASK_TOPICS
 const PAGE_COMPONENTS: Record<PageId, React.FC<{ onNavigate?: (p: PageId) => void }>> = {
   'ask-cortex': AskCortexPage,
   overview: Overview,
-  'revenue-assurance': RevenueAssurance,
-  'billing-exceptions': BillingExceptions,
-  collections: Collections,
-  'theft-tamper': TheftTamper,
-  'churn-risk': ChurnRisk,
+  'meter-reading': MeterReading,
+  validation: Validation,
+  'rate-calculation': RateCalculation,
+  'bill-generation': BillGeneration,
+  'bill-delivery': BillDelivery,
+  'payment-collection': PaymentCollection,
+  'exceptions-collections': ExceptionsCollections,
+  'cycle-times': CycleTimes,
   'source-coverage': SourceCoverage,
   'data-sources': DataSources,
   'field-mapping': FieldMapping,
@@ -60,7 +66,7 @@ function AppShell() {
         {STATIC && (
           <div className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900">
             Public demo: a read-only snapshot of synthetic data (SAP A = ECC, SAP B = S/4HANA, all non-SAP sources on). Filters show an exact territory
-            selection, or all/one territory with one customer division. Cortex answers are pre-generated for the suggested questions.
+            selection, or all/one territory with one customer segment. Cortex answers are pre-generated for the suggested questions.
           </div>
         )}
         {ASK[activePage] && (
